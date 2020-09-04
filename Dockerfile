@@ -1,4 +1,4 @@
-FROM extvos/java:latest
+FROM extvos/java:7
 MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
