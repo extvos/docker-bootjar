@@ -1,17 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
 usage() {
-	echo "#### Docker Image for Boot JAR directly"
+	echo "#### Docker Image for Boot JAR directly ###########################################"
 	echo "Usage:  "
 	echo "        Bind jar file to /webapps/boot.jar"
 	echo "        Default expose port is 8080"
 	echo "Envronments:"
-	echo "        JAVA_OPTS: java options, default is ${JAVA_OPTS}"
-	echo "        BOOT_ARGS: application arguments, default is empty."
+	echo "        JAVA_OPTS: java options, now is '${JAVA_OPTS}'"
+	echo "        BOOT_ARGS: application arguments, now is '${BOOT_ARGS}'."
+	echo "                   or using continuous variable from 0 as BOOT_ARG_{0...} instead."
+	echo "###################################################################################"
 	echo ""
 }
+
+i=0
+
+while true
+do
+	ARG=BOOT_ARG_$i
+	if [ -z "${!ARG}" ]; then
+		break
+	fi
+	# echo "${!ARG}"
+	BOOT_ARGS="$BOOT_ARGS ${!ARG}"
+	i=$(($i + 1))
+done
 
 if [ $# -gt 0 ]; then
 	exec "$@"
