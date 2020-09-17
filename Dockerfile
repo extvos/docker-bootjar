@@ -1,5 +1,8 @@
 FROM extvos/java:latest
 MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
+
+RUN apk update && apk add --no-cache fontconfig font-util ttf-dejavu ttf-opensans
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
