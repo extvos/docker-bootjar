@@ -1,9 +1,5 @@
-FROM extvos/java:latest
+FROM openjdk:jdk-oraclelinux8
 MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
-
-RUN apk update \
-    && apk add --no-cache fontconfig font-util ttf-dejavu ttf-opensans \
-    && fc-cache --force
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
