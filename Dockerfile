@@ -3,8 +3,10 @@ MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-ENV JAVA_OPTS "-Xms128M -Xmx256M"
+ENV JAVA_OPTS ""
 ENV BOOT_ARGS ""
+
+ENV JAVA_OPT_0 "-Xms128M -Xmx256M"
 
 VOLUME /webapps
 VOLUME /var/log
