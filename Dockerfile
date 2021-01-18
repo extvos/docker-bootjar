@@ -1,4 +1,4 @@
-FROM openjdk:jdk-oraclelinux8
+FROM openjdk:8-oraclelinux8
 MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
 
 COPY entrypoint.sh /entrypoint.sh
@@ -8,7 +8,6 @@ ENV JAVA_OPTS ""
 ENV BOOT_ARGS ""
 
 ENV JAVA_OPT_0 "-Xms128M -Xmx256M"
-ENV BOOT_ARG_0 ""
 
 VOLUME /webapps
 VOLUME /var/log
