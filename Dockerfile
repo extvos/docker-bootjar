@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-FROM extvos/java:10
-=======
-FROM openjdk:8-oraclelinux8
->>>>>>> 8
+FROM openjdk:10
 MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
 
 COPY entrypoint.sh /entrypoint.sh
