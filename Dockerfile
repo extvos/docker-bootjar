@@ -1,4 +1,4 @@
-FROM openjdk:jdk-oraclelinux8
+FROM openjdk:latest
 MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
 
 COPY entrypoint.sh /entrypoint.sh
